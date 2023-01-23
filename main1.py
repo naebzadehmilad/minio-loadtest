@@ -12,12 +12,12 @@ if os.path.exists('config.cfg'):
     print('##config.cfg is exist##.')
 else:
     conf.add_section("MINIO_CONFIG")
-    conf.set('MINIO_CONFIG', 'LOCAL_FILE_PATH', './300kb.log')
-    conf.set('MINIO_CONFIG', 'ACCESS_KEY', 'admin')
-    conf.set('MINIO_CONFIG', 'SECRET_KEY', 'FinalFinal!!!!')
+    conf.set('MINIO_CONFIG', 'LOCAL_FILE_PATH', './400kb.log')
+    conf.set('MINIO_CONFIG', 'ACCESS_KEY', 'user')
+    conf.set('MINIO_CONFIG', 'SECRET_KEY', 'pass')
     conf.set('MINIO_CONFIG', 'API_HOST', '192.168.10.93:9000')
     conf.set('MINIO_CONFIG', 'TARGET_BUCKET', 'load')
-    conf.set('MINIO_CONFIG', 'FILENAME', './300kb.log')
+    conf.set('MINIO_CONFIG', 'FILENAME', './400kb.log')
     conf.set('MINIO_CONFIG', 'THR', '1000')
 
     with open('config.cfg', 'w') as configfile:
