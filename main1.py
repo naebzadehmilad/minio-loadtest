@@ -13,6 +13,7 @@ TARGET_BUCKET="load"
 FILENAME="load.jpg"
 
 #thr=5000
+cpu=8
 conf= configparser.ConfigParser()
 if os.path.exists('config.cfg'):
     print('##config.cfg is exist##.')
@@ -54,7 +55,7 @@ def minioupload(identifier):
     print("--- %s seconds ---" % (time.time() - start_time))
 
 if __name__ == '__main__':
-    with Pool() as pool:
+    with Pool(cpu) as pool:
         for result in pool.map(minioupload, range(thr)):
             print(result)
             print("---RESULT--- %s seconds ---" % (time.time() - start_time))
